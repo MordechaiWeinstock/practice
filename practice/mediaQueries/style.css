@@ -1,0 +1,65 @@
+nav, div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.middle {
+    flex-grow: 1;
+    max-width:300px;
+}
+
+a {
+    margin: 0.25em;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1:after {
+    content: "up to 500px";
+    color: green;
+    display: block;
+    font-size: 0.5em;
+}
+
+@media (min-width: 500px) {
+    nav, div {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .left {
+        justify-content: flex-start;
+    }
+    
+    h1:after {
+        content: "500px and wider";
+        color: orange;
+        display: block;
+        font-size: 0.5em;
+    }
+}
+
+@media (min-width: 750px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    a {
+        font-size: 1.2em;
+        margin: 1.5em;
+    }
+
+    .middle {
+        max-width: 400px;
+    }
+    
+    h1:after {
+        content: "750px and wider";
+        color: red;
+        display: block;
+        font-size: 0.5em;
+    }
+}
