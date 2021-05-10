@@ -1,0 +1,17 @@
+img {
+    height: 30vh;
+    width: 30%;
+    margin: calc(10%/6);
+}
+
+nav {
+    border-bottom: solid grey 3px;
+    width: 30%;
+    margin-left: calc(10%/6);
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: 600;
+    font-family: 'Comic Neue', cursive;;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+}
