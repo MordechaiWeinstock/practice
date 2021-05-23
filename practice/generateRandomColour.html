@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Colour Generator</title>
+    <style>
+        h1, button {
+            display: block;
+            margin: 40px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1></h1>
+        <button>Change Colour</button>
+    </main>
+    <script>
+        txt = document.querySelector('h1');
+        btn = document.querySelector('button');
+        
+        const generator = () => {
+            const r = Math.floor(Math.random()*256)
+            const g = Math.floor(Math.random()*256)
+            const b = Math.floor(Math.random()*256)
+            const color =  `rgb(${r}, ${g}, ${b})`;
+
+            document.body.style.backgroundColor = color
+            txt.innerText = color;
+        }
+
+        generator();
+        
+        btn.addEventListener('click', () => {
+            generator();
+        });
+    </script>
+</body>
+</html>
