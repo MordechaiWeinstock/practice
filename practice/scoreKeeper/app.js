@@ -3,17 +3,13 @@ const counterTwo = document.querySelector('#counterTwo');
 const playToSelection = document.querySelector('#playTo');
 const btnOne = document.querySelector('#btnOne');
 const btnTwo = document.querySelector('#btnTwo');
-const reset = document.querySelector('#reset');
+const resetBtn = document.querySelector('#reset');
 
 let playingTo = 1;
 let scoreOne = 0;
 let scoreTwo = 0;
 
-playToSelection.addEventListener('click', () => {
-    playingTo = parseInt(playToSelection.value);
-});
-
-reset.addEventListener('click', () => {
+const reset = () => {
     scoreOne = 0;
     scoreTwo = 0;
     counterOne.style.color = '';
@@ -22,7 +18,18 @@ reset.addEventListener('click', () => {
     counterTwo.innerText = scoreTwo;
     btnOne.disabled = false;
     btnTwo.disabled = false;
-})
+}
+
+playToSelection.addEventListener('change', () => {
+    reset();
+    playingTo = parseInt(playToSelection.value);
+});
+
+resetBtn.addEventListener('click', () => {
+    reset();
+    playToSelection.value = '1';
+    playingTo = 1;
+});
 
 btnOne.addEventListener('click', () => {
     if (scoreOne < playingTo && scoreTwo < playingTo) {
@@ -54,4 +61,5 @@ btnTwo.addEventListener('click', () => {
     }
 })
 
-// when refactoring the code, check out the use of 'this' for when looping over the btns to set the eventListeners
+// I thought of refactoring by making two objects for the two players and one generic function to add as eventListener, but wouldn't make it much shorter here so left as is. I later saw Colt did so.
+// I didn't focus on responsive design with this app

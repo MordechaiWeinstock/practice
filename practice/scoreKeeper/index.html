@@ -5,30 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Score Keeper</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 </head>
 <body>
     <main>
-        <h1>Ping Pong Score Keeper</h1>
-        
-        <h2><span id="counterOne">0</span> to <span id="counterTwo">0</span></h2>
-        <p>Use the buttons below to keep score.</p>
-        <h3>Playing to:</h3>
-        <select name="" id="playTo">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        
-        <button id="btnOne">+1 Player One</button>
-        <button id="btnTwo">+1 Player Two</button>
-        <button id="reset">Reset</button>
+        <div class="container columns is-centered">
+            <div class="card column is-one-quarter">
+                <div class="card-image">
+                    <img src="https://t4.ftcdn.net/jpg/01/16/82/63/240_F_116826393_PUuhJIyeFDwxHmcaiX2CElY4BLBbZoCp.jpg" alt="Placeholder image">
+                </div>
+                <header class="card-header">
+                    <h1 class="card-header-title is-size-5">Ping Pong Score Keeper</h1>
+                </header>
+
+                <p class="is-size-3"><span id="counterOne" class="has-text-weight-bold">0</span> to <span id="counterTwo" class="has-text-weight-bold">0</span></p>
+                <p>Use the buttons below to keep score.</p>
+
+                <div class="is-flex pb-3 pt-3">
+                    <p class="has-text-weight-bold pr-3">Playing to:</p>
+                    <div class="select is-rounded is-small">
+                        <select name="" id="playTo">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="is-centered buttons are-small">
+                    <button id="btnOne" class="button is-info">+1 Player One</button>
+                    <button id="btnTwo" class="button is-success">+1 Player Two</button>
+                    <button id="reset" class="button is-danger">Reset</button>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="app.js"></script>
 </body>
